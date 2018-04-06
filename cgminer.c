@@ -7588,7 +7588,7 @@ static void *stratum_sthread(void *userdata)
                      noncehex,
                      swab32(work->version),
                      sshare->id);
-            applog(LOG_INFO, "MV: Submitting share AB style");
+            applog(LOG_ERR, "MV: Submitting share AB style");
         }
         else
         {
@@ -7600,7 +7600,7 @@ static void *stratum_sthread(void *userdata)
                      work->ntime,
                      noncehex,
                      sshare->id);
-            applog(LOG_INFO, "MV: Submitting share NOT AB style");
+            applog(LOG_ERR, "MV: Submitting share NOT AB style");
         }
         applog(LOG_INFO, "Submitting share %08lx to pool %d", (long unsigned int)htole32(hash32[6]), pool->pool_no);
 
